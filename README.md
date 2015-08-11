@@ -90,3 +90,15 @@ Bonus Features:
 
 - User can request a new password and receive a password token via email
 - User must be signed in to post a Peep
+
+Images:
+-------
+
+#### Home page
+![Screenshot Home Page](/public/git_img/chitter-home.png)
+
+#### Sign in
+![Screenshot Sign Up](/public/git_img/chitter-login.png)
+
+#### Add new peep
+![Screenshot Home Page](/public/git_img/chitter-post.png)
