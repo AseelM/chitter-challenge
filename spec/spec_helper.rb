@@ -7,13 +7,13 @@ require 'byebug'
 require 'coveralls'
 require 'simplecov'
 
+Capybara.app = Chitter::Application
+
 SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
   Coveralls::SimpleCov::Formatter
 ]
 Coveralls.wear!
-
-Capybara.app = Chitter::Application
 
 RSpec.configure do |config|
 

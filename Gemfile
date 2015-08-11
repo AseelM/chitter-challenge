@@ -13,8 +13,6 @@ gem 'htmlbeautifier', '~> 1.1.0'
 group :development, :test do
 
   gem 'capybara'
-  # gem 'cucumber'
-  # gem 'cucumber-sinatra'
   gem 'rspec'
   gem 'shotgun'
   gem 'database_cleaner'
