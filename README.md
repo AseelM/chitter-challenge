@@ -13,34 +13,67 @@ Brief:
 
 To write a Twitter clone, Chitter, that allows registered, signed in users to post messages ('peeps'). These can be viewed by the public via a web application. The following user stories will be satisfied.
 
-User Stories:
+Site setup:
 -------
 
-```sh
-As a Maker
+- Run site on local server: `$ rackup`
+
+
+Testing setup:
+-------
+
+- Run RSpec tests: `$ rspec`
+
+
+User stories:
+-------
+
+```
+As a new user
 So that I can post messages on Chitter as me
 I want to sign up for Chitter
 
-As a Maker
+As a new user who loves their username
+So that I know my username is shared with no others
+I want the sign-up protocol to only allow me to use a unique username
+
+As a user who is ready to peep
 So that I can post messages on Chitter as me
 I want to log in to Chitter
 
-As a Maker
+As a security conscious user
 So that I can avoid others posting messages on Chitter as me
 I want to log out of Chitter
 
-As a maker
-So that I can let people know what I am doing  
+As a security conscious user
+So that others cannot log into my account
+I want to validate the login process with a secret password
+
+As a forgetful user
+So that I can reset my password if I forget it
+I want to be able to do so via a password recovery system
+
+As a user with something to share
+So that I can let people know what I am doing
 I want to post a message (peep) to chitter
 
-As a maker
-So that I can see what others are saying  
+As a user who likes to keep up to date with others
+So that I can see what others are saying
 I want to see all peeps in reverse chronological order
 
-As a maker
+As a user who likes to know who has said what
+So that I can which peeps are attributed to which user
+I want this information displayed alongside each peep
+
+As a pedantic user
 So that I can better appreciate the context of a peep
 I want to see the time at which it was made
+
+As a user without much time
+So that I can see all peep info without having to be signed in
+I want that to be displayed regardless of being signed in/out
 ```
+
 
 Technologies used:
 ----------------
