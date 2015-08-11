@@ -12,11 +12,11 @@ feature 'User browses all current peeps' do
 
   scenario 'when opening the home page' do
     visit '/'
-    expect(page).to have_content('Current peeps:')
+    expect(page).to have_content('Chitter')
   end
 
   scenario 'with username and name for each peep' do
-    expect(page).to have_content('Peeped by "Tim (a.k.a robbo1984)"')
+    expect(page).to have_content('robbo1984')
   end
 
 end

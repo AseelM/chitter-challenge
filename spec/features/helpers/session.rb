@@ -9,24 +9,20 @@ module SessionHelpers
     fill_in :password_confirmation, with: password_confirmation
     fill_in :name, with: name
     fill_in :username, with: username
-    click_button 'Sign up'
+    click_button 'Sign Up'
   end
 
   def sign_in(email, password)
     visit '/sessions/new'
-    within 'section#sign-in' do
-      fill_in 'email', with: email
-      fill_in 'password', with: password
-      click_button 'Sign in'
-    end
+    fill_in 'email', with: email
+    fill_in 'password', with: password
+    click_button 'Sign In'
   end
 
   def add_peep(message)
     visit '/peeps/new'
-    within('#new-peep') do
-      fill_in 'message', with: message
-      click_button 'Add peep'
-    end
+    fill_in 'message', with: message
+    click_button 'Peep!'
   end
 
 end

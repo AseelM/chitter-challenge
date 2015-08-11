@@ -1,11 +1,13 @@
-<div id='new-peep'>
+<div class="row">
   <% if current_user %>
-  <form method='post' action='/peeps'>
-    Peep: <input type='text' name='message'>
-    <input type='submit' value='Add peep'>
-  </form>
-  <% else %>
-  Please <a href='/sessions/new' id='sign-in' class='button'>Sign in</a>
-  Or <a href='/users/new' id='sign-up' class='button'>Sign up</a>
+    <div class="col-md-10 col-md-offset-1">
+      <form class="form" method = "post" action="/peeps">
+        <div class="form-group">
+          <label for="exampleInputFile">Write your peep here (140 chars max):</label>
+          <textarea class="form-control" rows="3" name="message"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn pull-right">Peep!</button>
+      </form>
+    </div>
   <% end %>
 </div>

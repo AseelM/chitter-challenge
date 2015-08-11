@@ -1,24 +1,39 @@
-<div id='new-peep'>
+<div class="row">
   <% if current_user %>
-  <form method='post' action='/peeps'>
-    Peep: <input type='text' name='message'>
-    <input type='submit' value='Add peep'>
-  </form>
-  <% else %>
-  Please <a href='/sessions/new' id='sign-in' class='button'>Sign in</a>
-  Or <a href='/users/new' id='sign-up' class='button'>Sign up</a>
+    <div class="col-md-10 col-md-offset-1">
+      <form class="form" method = "post" action="/peeps">
+        <div class="form-group">
+          <label for="exampleInputFile">Write your peep here (140 chars max):</label>
+          <textarea class="form-control" rows="3" name="message"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn pull-right">Peep!</button>
+      </form>
+    </div>
   <% end %>
 </div>
-
-    Current peeps:
-      <ul>
-        <% Peep.all(order: [:time.desc]).each do |peep| %>
-        <li><h4><%= peep.message %></h4> 
-        (Peeped by "<%= peep.user.name %> (a.k.a <%= peep.user.username %>)" - <%= peep.time %>)
-        </a></li>
-        <% end %>
-      </ul>
-
-
-
-
+<br>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <% Peep.all(order: [:time.desc]).each do |peep| %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-md-6">
+              <h2 class="panel-title"> <%= peep.user.username %> </h2>
+            </div>
+            <div class="col-md-6"><span class="pull-right">
+                <% if peep.time %>
+                  <%= peep.time.strftime("%d/%m/%Y") + peep.time.strftime(" at %I:%M %p")  %></span>
+              <% else %>
+                Date unknown #fail
+                  <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <%= peep.message %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
