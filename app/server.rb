@@ -6,7 +6,7 @@ require 'tilt/erb'
 require_relative 'datamapper_setup'
 
 require_relative 'controllers/base'
-require_relative 'controllers/email'
+# require_relative 'controllers/email'
 require_relative 'controllers/peeps'
 require_relative 'controllers/sessions'
 require_relative 'controllers/users'
