@@ -1,3 +1,3 @@
-require './app/server.rb'
+require './app/server'
 
 run Chitter::Application

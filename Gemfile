@@ -5,17 +5,14 @@ gem 'data_mapper'
 gem 'dm-postgres-adapter'
 gem 'bcrypt'
 gem 'rack-flash3'
-gem 'sinatra-partial'
-gem 'launchy'
-gem 'rest-client'
-gem 'htmlbeautifier', '~> 1.1.0'
+gem 'rake'
 
-group :development, :test do
+group :test do
 
   gem 'capybara'
   gem 'cucumber'
+  gem 'launchy'
   gem 'rspec'
-  gem 'shotgun'
   gem 'database_cleaner'
   gem 'byebug'
   gem 'rubocop-rspec'
