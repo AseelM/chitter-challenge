@@ -1,19 +1,21 @@
 source 'https://rubygems.org'
 
-ruby '2.2.2'
-
 gem 'sinatra'
 gem 'data_mapper'
 gem 'dm-postgres-adapter'
 gem 'bcrypt'
 gem 'rack-flash3'
-gem 'rake'
+gem 'sinatra-partial'
+gem 'launchy'
+gem 'rest-client'
 
 group :test do
 
   gem 'capybara'
-  gem 'launchy'
+  gem 'cucumber'
+  gem 'cucumber-sinatra'
   gem 'rspec'
+  gem 'shotgun'
   gem 'database_cleaner'
   gem 'byebug'
   gem 'rubocop-rspec'
