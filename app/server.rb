@@ -23,7 +23,7 @@ module Chitter
     use Rack::Flash
     use Rack::MethodOverride
 
-    set :email_handler, MailgunWrapper.new
+    # set :email_handler, MailgunWrapper.new
 
     use Routes::Base
     use Routes::Peeps
