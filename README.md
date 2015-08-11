@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/timrobertson0122/chitter-challenge.png)](https://travis-ci.org/timrobertson0122/chitter-challenge)  [![Coverage Status](https://coveralls.io/repos/timrobertson0122/chitter-challenge/badge.svg?branch=master&service=github)](https://coveralls.io/github/timrobertson0122/chitter-challenge?branch=master)
+[![Code Climate](https://codeclimate.com/github/timrobertson0122/chitter-challenge/badges/gpa.svg)](https://codeclimate.com/github/timrobertson0122/chitter-challenge)
 
 
 Project Overview at http://timrobertson0122.github.io/chitter-challenge/
