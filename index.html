@@ -3,50 +3,42 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=640">
-
-    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
-    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
-
-    <script type="text/javascript" src="javascripts/modernizr.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $('#main_content').headsmart()
-      })
-    </script>
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
     <title>Chitter-challenge by timrobertson0122</title>
   </head>
 
   <body>
-    <a id="forkme_banner" href="https://github.com/timrobertson0122/chitter-challenge">View on GitHub</a>
-    <div class="shell">
+    <div id="container">
+      <div class="inner">
 
-      <header>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <h1>Chitter-challenge</h1>
-            <h2>Build a Twitter Clone!</h2>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-      </header>
+        <header>
+          <h1>Chitter-challenge</h1>
+          <h2>Build a Twitter Clone!</h2>
+        </header>
 
-      <section id="downloads">
-        <span class="inner">
-          <a href="https://github.com/timrobertson0122/chitter-challenge/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/timrobertson0122/chitter-challenge/tarball/master" class="tgz"><em>download</em> .TGZ</a>
-        </span>
-      </section>
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/timrobertson0122/chitter-challenge/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/timrobertson0122/chitter-challenge/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/timrobertson0122/chitter-challenge" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
 
+        <hr>
 
-      <span class="banner-fix"></span>
+        <section id="main_content">
+          <p><a href="https://travis-ci.org/timrobertson0122/chitter-challenge"><img src="https://travis-ci.org/timrobertson0122/chitter-challenge.png" alt="Build Status"></a>  <a href="https://coveralls.io/github/timrobertson0122/chitter-challenge?branch=master"><img src="https://coveralls.io/repos/timrobertson0122/chitter-challenge/badge.svg?branch=master&amp;service=github" alt="Coverage Status"></a>
+<a href="https://codeclimate.com/github/timrobertson0122/chitter-challenge"><img src="https://codeclimate.com/github/timrobertson0122/chitter-challenge/badges/gpa.svg" alt="Code Climate"></a></p>
 
+<p>Project Overview at <a href="http://timrobertson0122.github.io/chitter-challenge/">http://timrobertson0122.github.io/chitter-challenge/</a></p>
 
-      <section id="main_content">
-        <h1>
+<p>Live on Heroku at <a href="https://chitter-challenge.herokuapp.com/">https://chitter-challenge.herokuapp.com/</a></p>
+
+<h1>
 <a id="chitter-challenge" class="anchor" href="#chitter-challenge" aria-hidden="true"><span class="octicon octicon-link"></span></a>Chitter Challenge</h1>
 
 <p>Brief:</p>
@@ -54,31 +46,67 @@
 <p>To write a Twitter clone, Chitter, that allows registered, signed in users to post messages ('peeps'). These can be viewed by the public via a web application. The following user stories will be satisfied.</p>
 
 <h2>
-<a id="user-stories" class="anchor" href="#user-stories" aria-hidden="true"><span class="octicon octicon-link"></span></a>User Stories:</h2>
+<a id="site-setup" class="anchor" href="#site-setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Site setup:</h2>
 
-<pre><code>As a Maker
+<ul>
+<li>Run site on local server: <code>$ rackup</code>
+</li>
+</ul>
+
+<h2>
+<a id="testing-setup" class="anchor" href="#testing-setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Testing setup:</h2>
+
+<ul>
+<li>Run RSpec tests: <code>$ rspec</code>
+</li>
+</ul>
+
+<h2>
+<a id="user-stories" class="anchor" href="#user-stories" aria-hidden="true"><span class="octicon octicon-link"></span></a>User stories:</h2>
+
+<pre><code>As a new user
 So that I can post messages on Chitter as me
 I want to sign up for Chitter
 
-As a Maker
-So that I can post messages on Chitter as me
-I want to log-in to Chitter
+As a new user who loves their username
+So that I know my username is shared with no others
+I want the sign-up protocol to only allow me to use a unique username
 
-As a Maker
+As a user who is ready to peep
+So that I can post messages on Chitter as me
+I want to log in to Chitter
+
+As a security conscious user
 So that I can avoid others posting messages on Chitter as me
 I want to log out of Chitter
 
-As a maker
-So that I can let people know what I am doing  
+As a security conscious user
+So that others cannot log into my account
+I want to validate the login process with a secret password
+
+As a forgetful user
+So that I can reset my password if I forget it
+I want to be able to do so via a password recovery system
+
+As a user with something to share
+So that I can let people know what I am doing
 I want to post a message (peep) to chitter
 
-As a maker
-So that I can see what others are saying  
+As a user who likes to keep up to date with others
+So that I can see what others are saying
 I want to see all peeps in reverse chronological order
 
-As a maker
+As a user who likes to know who has said what
+So that I can which peeps are attributed to which user
+I want this information displayed alongside each peep
+
+As a pedantic user
 So that I can better appreciate the context of a peep
 I want to see the time at which it was made
+
+As a user without much time
+So that I can see all peep info without having to be signed in
+I want that to be displayed regardless of being signed in/out
 </code></pre>
 
 <h2>
@@ -88,6 +116,7 @@ I want to see the time at which it was made
 <li>Written in Ruby, tested with Rspec and Capybara</li>
 <li>DataMapper and Postgresql for DB</li>
 <li>Bcrypt for password encryption</li>
+<li>Mailgun API for email integration</li>
 <li>Served by Sinatra, HTML, CSS, Bootstrap for looks</li>
 </ul>
 
@@ -98,22 +127,33 @@ I want to see the time at which it was made
 <li>User can request a new password and receive a password token via email</li>
 <li>User must be signed in to post a Peep</li>
 </ul>
-      </section>
 
-      <footer>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <p>this project by <a href="https://github.com/timrobertson0122">timrobertson0122</a> can be found on <a href="https://github.com/timrobertson0122/chitter-challenge">GitHub</a></p>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-        <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
-        <span class="octocat"></span>
-      </footer>
+<h2>
+<a id="images" class="anchor" href="#images" aria-hidden="true"><span class="octicon octicon-link"></span></a>Images:</h2>
 
+<h4>
+<a id="home-page" class="anchor" href="#home-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Home page</h4>
+
+<p><img src="/public/git_img/chitter-home.png" alt="Screenshot Home Page"></p>
+
+<h4>
+<a id="sign-in" class="anchor" href="#sign-in" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sign in</h4>
+
+<p><img src="/public/git_img/chitter-login.png" alt="Screenshot Sign Up"></p>
+
+<h4>
+<a id="add-new-peep" class="anchor" href="#add-new-peep" aria-hidden="true"><span class="octicon octicon-link"></span></a>Add new peep</h4>
+
+<p><img src="/public/git_img/chitter-post.png" alt="Screenshot Home Page"></p>
+        </section>
+
+        <footer>
+          Chitter-challenge is maintained by <a href="https://github.com/timrobertson0122">timrobertson0122</a><br>
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
     </div>
-
-    
   </body>
 </html>
