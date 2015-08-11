@@ -1,7 +1,7 @@
 require 'sinatra/base'
 require 'data_mapper'
 require 'rack-flash'
-require 'sinatra/partial'
+require 'tilt/erb'
 
 require_relative 'datamapper_setup'
 
