@@ -32,7 +32,7 @@ module Chitter
 
     set :partial_template_engine, :erb
     set :views, proc { File.join('app', 'views') }
-    set :public, proc { File.join('app','public') }
+    set :public_folder, proc { File.join('app','public') }
 
   end
 
