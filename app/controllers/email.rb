@@ -18,7 +18,7 @@ class MailgunWrapper
         multipart: true
       },
       headers: {
-        "h:X-My-Header": 'www/mailgun-email-send'
+        "h:X-My-Header" => 'www/mailgun-email-send'
       },
       verify_ssl: false
     )
