@@ -14,12 +14,11 @@ class MailgunWrapper
         to: user.email,
         subject: 'This is subject',
         text: 'This is text',
-        html: 'https://chitter-challenge.herokuapp.com/users/reset_password' +
-        user.password_token,
+        html: 'https://chitter-challenge.herokuapp.com/users/reset_password' + user.password_token,
         multipart: true
       },
       headers: {
-        "h:X-My-Header" => 'www/mailgun-email-send'
+        "h:X-My-Header": 'www/mailgun-email-send'
       },
       verify_ssl: false
     )

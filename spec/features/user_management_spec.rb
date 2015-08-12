@@ -84,17 +84,13 @@ feature 'User forgets password' do
     user
   end
 
-  xscenario 'User requests replacement password' do
+  scenario 'User requests replacement password' do
     visit '/sessions/new'
-    expect(page).to have_content('Forgot password?')
-    within '#forgot' do
-      fill_in :email, with: user.email
-    end
-
+    click_link('Forgotten Password?')
+    fill_in :email, with: user.email
     expect(Chitter::Application.email_handler)
       .to receive(:send_email_to).with(anything)
-
-    click_button 'Request new password'
+    click_button 'Request New Password'
     expect(page).to have_content('Password recovery e-mail sent!')
   end
 end
