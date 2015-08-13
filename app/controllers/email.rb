@@ -11,10 +11,10 @@ class MailgunWrapper
       method: :post,
       payload: {
         from: 'postmaster@sandboxf59a3be327d54fd79069be7d347b9af4.mailgun.org',
-        to: user.email,
+        to: 'timrobertson0122@gmail.com',
         subject: 'This is subject',
         text: 'This is text',
-        html: 'http://chitter-challenge.herokuapp.com/users/reset_password' + user.password_token,
+        html: 'https://chitter-challenge.herokuapp.com/users/reset_password' + user.password_token,
         multipart: true
       },
       headers: {
