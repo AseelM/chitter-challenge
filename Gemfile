@@ -8,6 +8,7 @@ gem 'rack-flash3'
 gem 'sinatra-partial'
 gem 'launchy'
 gem 'rest-client'
+gem 'rake', '~> 10.4.2'
 
 group :test do
 
