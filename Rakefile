@@ -9,7 +9,7 @@ begin
   rescue LoadError
 end
 require 'data_mapper'
-require './app/data_mapper_setup'
+require './app/datamapper_setup'
 
 task :auto_upgrade do
   # auto_upgrade makes non-destructive changes.
